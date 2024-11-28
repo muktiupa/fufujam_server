@@ -1,12 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const corsMiddleware = require('./utils/corsMiddleware')
 
 dotenv.config();
 const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(corsMiddleware); // Use the custom CORS middleware
+
 
 // Routes
 const userRoutes = require('./routes/userRoutes');
