@@ -10,7 +10,9 @@ app.use(express.json());
 
 // Routes
 const userRoutes = require('./routes/userRoutes');
+const bikeRoutes = require('./routes/bikeRoutes')
 app.use('/api/users', userRoutes);
+app.use('/api/bikes', bikeRoutes);
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
